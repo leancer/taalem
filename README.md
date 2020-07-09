@@ -9,5 +9,5 @@ there is envfile.example.php in inc folder you have to put those key in that fil
 
 
 # Project Team
-[Kamiyab Asamadi](https://github.com/leancer/)
-[Vaibhav Patel](https://github.com/)
+ - [Kamiyab Asamadi](https://github.com/leancer/)
+ - [Vaibhav Patel](https://github.com/)
