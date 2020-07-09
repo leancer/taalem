@@ -1,0 +1,42 @@
+ <?php 
+                if (isset($_POST['emailsend'])) {
+                  $reply = $_POST['reply'];
+
+                  //phpmailer
+
+                    $mail = new PHPMailer;
+
+                    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+                    $mail->isSMTP();                                      // Set mailer to use SMTP
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'sportsbikersinc@gmail.com';                 // SMTP username
+                    $mail->Password = 'Xtreme1502';                           // SMTP password
+                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 465;                                    // TCP port to connect to
+
+                    $mail->setFrom('sportsbikersinc@gmail.com', 'Sports Bikers & Bikers Wear');
+                    $mail->addAddress($mailid, $mailuser);     // Add a recipient
+                    $mail->addReplyTo('sportsbikersinc@gmail.com', 'Sports Bikers & Bikers Wear');
+                    //$mail->addCC('cc@example.com');
+                    //$mail->addBCC('bcc@example.com');
+
+                    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                   // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+                    $mail->isHTML(true);                                  // Set email format to HTML
+
+                    $mail->Subject = $mailtitle;
+                    $mail->Body    = $reply;
+                    $mail->AltBody = $reply;
+
+                    if(!$mail->send()) {
+                        $emailfail = "Email Could Not Be Sent";
+                        echo 'Mailer Error: ' . $mail->ErrorInfo;
+                    } else {
+                        $emailsucc = "Email Successfully Sent";
+                    }
+
+                }
+
+              ?>
