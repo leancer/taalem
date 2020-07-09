@@ -6,3 +6,8 @@ Taalem is Online learning System like Udemy built with PHP
 
 to Run Project you need Salt and MERCHANT_KEY from Payu
 there is envfile.example.php in inc folder you have to put those key in that file and rename file to envfile.php
+
+
+# Project Team
+[Kamiyab Asamadi](https://github.com/leancer/)
+[Vaibhav Patel](https://github.com/)
